@@ -1,0 +1,139 @@
+<!DOCTYPE html>	
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Website</title>
+</head>
+
+<body id="page" style="font-family: Arial, sans-serif; margin: 0; background-color: #f0f9ff; color: #333;">
+
+    <!-- NAVIGATION -->
+    <nav style="background-color black #63165e; padding: 15px; text-align: center;">
+        <a href="#home"    style="color: rgb(28, 28, 232); margin: 10px; text-decoration: none;">Home</a>
+        <a href="#about"   style="color: blue; margin: 10px; text-decoration: none;">About Us</a>
+        <a href="#skills"  style="color: blue; margin: 10px; text-decoration: none;">Our Skills</a>
+        <a href="#hobbies" style="color: blue; margin: 10px; text-decoration: none;">Hobbies</a>
+        <a href="#contact" style="color: blue(26, 26, 32); margin: 10px; text-decoration: none;">Contact Us</a>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" style="padding: 50px 20px; text-align: center; background-color: #cffafe;">
+        <img src="IMG_20261119_095653_060.jpg"
+     alt="Our personal photograph"
+     width="180"
+     style="border-radius: 50%; border: 4px solid #164e63;">
+
+        <h1 style="color: #164e63;">Hi, we are ray,bery!</h1>
+        <p style="font-size: 20px;">Welcome to our  website. I am a young learner interested in technology.</p>
+
+        <input type="text" id="visitorName" placeholder="Type your name" style="padding: 10px; font-size: 16px;">
+        <button onclick="greetVisitor()"
+                style="background-color: #164e63; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+            Greet us
+        </button>
+        <p id="greeting" style="font-size: 20px; color: #0d9488; min-height: 24px;"></p>
+
+        <button onclick="toggleTheme()"
+                style="background-color: #333; color: violet; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+            Dark / Light Mode
+        </button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="padding: 40px 20px; max-width: 700px; margin: auto;">
+        <h2 style="color: #164e63; border-bottom: 3px solid #fbbf24; padding-bottom: 8px;">About Us</h2>
+        <p style="font-size: 18px; line-height: 1.7;">
+            our names are Ray,Bery. we are  students who enjoys learning new things and using technology.
+        </p>
+    </section>
+
+    <!--our SKILLS -->
+    <section id="skills" style="padding: 40px 20px; background-color: white;">
+        <div style="max-width: 700px; margin: auto;">
+            <h2 style="color: #164e63; border-bottom: 3px solid #fbbf24; padding-bottom: 8px;">Our Skills</h2>
+            <button onclick="toggleSkills()"
+                    style="background-color: #d97706; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+                Show / Hide Skills
+            </button>
+            <ul id="skillsList" style="font-size: 18px; line-height: 2; display: none;">
+                <li>Computer Skills</li>
+                <li>Singing Skils</li>
+                <li>Creativity</li>
+                <li>Web Development</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- OUR HOBBIES -->
+    <section id="hobbies" style="padding: 40px 20px; max-width: 700px; margin: auto;">
+        <h2 style="color: #164e63; border-bottom: 3px solid #fbbf24; padding-bottom: 8px;">Our Hobbies</h2>
+        <ul style="font-size: 18px; line-height: 2;">
+            <li>Reading</li>
+            <li>Playing Football</li>
+            <li>Dancing</li>
+            <li>Learning Computers</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding: 40px 20px; background-color: #fef3c7; text-align: center;">
+        <h2 style="color: #164e63;">Contact Us</h2>
+        <p style="font-size: 18px;">Email: rehemaivera322@gmail.com,biyantineniyongabire123@gmail.com</p>
+        <button onclick="showContact()"
+                style="background-color: #0d9488; color: greenyellow; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+            Say Hello
+        </button>
+        <p id="response" style="font-size: 18px; color: #0d9488;"></p>
+    </section>
+W
+    <!-- FOOTER -->
+    <footer style="background-color: #164e63; color: white; text-align: center; padding: 20px;">
+        <p>&copy; 2026 Ray Bery | our Personal Website</p>
+        <p>Designed by Me</p>
+        <a href="#home" style="color: #fde68a;">Back to top</a>
+    </footer>
+
+    <script>
+        var darkMode = false;
+
+        function greetVisitor() {
+            var name = document.getElementById("visitorName").value;
+            if (name === "") {
+                document.getElementById("greeting").innerHTML = "Please type your name first!";
+            } else {
+                document.getElementById("greeting").innerHTML = "Hello, " + name + "! Welcome to my website!";
+            }
+        }
+
+        function toggleTheme() {
+            darkMode = !darkMode;
+            var page = document.getElementById("page");
+            if (darkMode) {
+                page.style.backgroundColor = "#1f2937";
+                page.style.color = "white";
+            } else {
+                page.style.backgroundColor = "#f0f9ff";
+                page.style.color = "#333";
+            }
+        }
+
+        function toggleSkills() {
+            var list = document.getElementById("skillsList");
+            if (list.style.display === "none") {
+                list.style.display = "block";
+            } else {
+                list.style.display = "none";
+            }
+        }
+
+        function showContact() {
+            document.getElementById("response").innerHTML = "Thank you for visiting my website!";
+        }
+    </script>
+
+</body>
+
+</html>
+
